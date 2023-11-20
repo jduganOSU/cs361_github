@@ -1,0 +1,19 @@
+Emoji Generator Microservice
+
+To make a request to the emoji generator, use the url '*/fetch_emoji?name={desired emoji}'. The URL will return a json object that 
+looks something like this: '{"emoji": "\ud83c\udfb8" }'.
+
+To recieve data from the emoji generator, you first need to make the request (using the requests library) as stated earlier. Then, you use the key 'emoji' to get the emoji itself. 
+Heres an example: 
+
+import requests
+emoji_name = microphone
+url = f'http://{url to microservice}/fetch_emoji?name={emoji_name}'
+emoji = requests.get(url).json()
+print(emoji['emoji'])
+
+
+The above will print the microphone emoji. 
+
+The emoji generator makes use of this api: https://api-ninjas.com/api/emoji
+Visit the site so you can find the emoji names that will work for the emoji generator. 
